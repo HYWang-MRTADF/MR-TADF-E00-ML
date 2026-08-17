@@ -8,9 +8,8 @@ model code, configuration, and frozen evaluation results associated with:
 *Machine Learning-Guided Discovery of MR-TADF Photocatalysts: Double Gain of
 Thermodynamics and Kinetics*.
 
-It is a local publication package. It contains no Git history, credentials,
-virtual-library structures, candidate structures, manuscript files, or trained
-model binaries.
+This repository provides a publication-ready reproducibility package for the machine-learning component of the study. It contains no Git history, credentials,
+virtual-library structures, candidate structures, manuscript files, or trained model binaries.
 
 ## Dataset
 
