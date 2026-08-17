@@ -87,11 +87,7 @@ The last three commands write only under `reproduction/`. They are included for
 reproduction and were not run while assembling this package. Full retraining is
 computationally expensive.
 
-## Provenance and integrity
 
-`SOURCE_CODE_CORRESPONDENCE.md` maps publication scripts to the actual frozen
-workflow sources. `SOURCE_FILE_MAP.csv`, `QA_REPORT.md`, and `SHA256SUMS.txt`
-record file origins, validation, exclusions, and package hashes.
 
 ## Licensing
 
