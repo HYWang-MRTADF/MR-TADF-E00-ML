@@ -1,0 +1,75 @@
+{
+  "final_architecture": "Random Forest + Extra Trees + XGBoost -> Ridge",
+  "member_order": [
+    "M06_RF",
+    "M07_ExtraTrees",
+    "M10_XGBoost"
+  ],
+  "members": {
+    "M06_RF": {
+      "class": "sklearn.ensemble.RandomForestRegressor",
+      "representation": "F05_Morgan_r2_MACCS",
+      "parameters": {
+        "bootstrap": false,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": 30,
+        "max_features": 0.25,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 1000
+      }
+    },
+    "M07_ExtraTrees": {
+      "class": "sklearn.ensemble.ExtraTreesRegressor",
+      "representation": "F10_all",
+      "parameters": {
+        "bootstrap": false,
+        "max_depth": null,
+        "max_features": 0.35,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 1000
+      }
+    },
+    "M10_XGBoost": {
+      "class": "xgboost.XGBRegressor",
+      "representation": "F10_all",
+      "parameters": {
+        "colsample_bytree": 0.85,
+        "gamma": 0.01,
+        "learning_rate": 0.04,
+        "max_depth": 5,
+        "min_child_weight": 1,
+        "n_estimators": 300,
+        "reg_alpha": 0,
+        "reg_lambda": 2,
+        "subsample": 0.75
+      },
+      "fixed_parameters": {
+        "objective": "reg:squarederror"
+      }
+    }
+  },
+  "preprocessing": {
+    "missing_values": "SimpleImputer(strategy='median') fitted inside each training fit",
+    "scaling": "none",
+    "variance_filter": "none",
+    "correlation_filter": "none",
+    "supervised_feature_selection": "none"
+  },
+  "meta_learner": {
+    "class": "sklearn.linear_model.Ridge",
+    "alpha": 1.0,
+    "training_input": "mean of five genuine five-fold OOF predictions per molecule and member"
+  },
+  "full_data_frozen_fit": {
+    "base_model_random_seed": 42,
+    "ridge_coefficients_in_member_order": [
+      0.25930475130326397,
+      0.3161354409607712,
+      0.4957691484841353
+    ],
+    "ridge_intercept": -0.19360075307755364
+  }
+}

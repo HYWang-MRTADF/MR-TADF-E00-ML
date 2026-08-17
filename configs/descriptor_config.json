@@ -1,0 +1,47 @@
+{
+  "software": "RDKit",
+  "software_version": "2025.03.3",
+  "component_order": [
+    "Morgan_r2",
+    "MACCS",
+    "RDKit_2D",
+    "topology"
+  ],
+  "components": {
+    "Morgan_r2": {
+      "dimension": 2048,
+      "generator": "AllChem.GetMorganGenerator",
+      "radius": 2,
+      "fpSize": 2048,
+      "includeChirality": true
+    },
+    "MACCS": {
+      "dimension": 167,
+      "generator": "MACCSkeys.GenMACCSKeys"
+    },
+    "RDKit_2D": {
+      "dimension": 217,
+      "generator": "Descriptors._descList in frozen RDKit version",
+      "nonfinite_policy": "replace non-finite values and absolute values above 1e10 with NaN"
+    },
+    "topology": {
+      "dimension": 21,
+      "generator": "project topology_proxy function",
+      "definition_implemented_in": "code/generate_descriptors.py"
+    }
+  },
+  "representations": {
+    "F05_Morgan_r2_MACCS": {
+      "components": ["Morgan_r2", "MACCS"],
+      "dimension": 2215,
+      "used_by": ["M06_RF"]
+    },
+    "F10_all": {
+      "components": ["Morgan_r2", "MACCS", "RDKit_2D", "topology"],
+      "dimension": 2453,
+      "used_by": ["M07_ExtraTrees", "M10_XGBoost"]
+    }
+  },
+  "raw_descriptors_are_label_independent": true,
+  "statistical_preprocessing_is_fit_within_training_only": true
+}

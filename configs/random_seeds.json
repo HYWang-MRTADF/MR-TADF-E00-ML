@@ -1,0 +1,34 @@
+{
+  "outer_split_seeds": [
+    7,
+    19,
+    31,
+    41,
+    55,
+    73,
+    89,
+    101,
+    131,
+    157,
+    202,
+    271,
+    314,
+    401,
+    512,
+    613,
+    777,
+    888,
+    1024,
+    2026
+  ],
+  "oof_repeat_seeds": [42, 73, 101, 314, 777],
+  "oof_repeats": 5,
+  "oof_folds": 5,
+  "member_seed_offsets": {
+    "M06_RF": 9200,
+    "M07_ExtraTrees": 9000,
+    "M10_XGBoost": 9600
+  },
+  "outer_split_base_model_seed": "outer split seed",
+  "full_data_base_model_seed": 42
+}
